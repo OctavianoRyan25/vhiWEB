@@ -4,6 +4,7 @@ import (
 	"github.com/OctavianoRyan25/VhiWEB/config"
 	"github.com/OctavianoRyan25/VhiWEB/model"
 	"github.com/OctavianoRyan25/VhiWEB/res"
+	"github.com/OctavianoRyan25/VhiWEB/util"
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 )
@@ -20,10 +21,7 @@ func CreateVendor(c *gin.Context) {
 
 	validate := validator.New()
 	if err := validate.Struct(&vendorReq); err != nil {
-		errors := []string{}
-		for _, error := range err.(validator.ValidationErrors) {
-			errors = append(errors, error.Field()+" is "+error.Error())
-		}
+		errors := util.ThrowError(err)
 		res.NewResponse(c, 400, "Validation error", errors)
 		return
 	}

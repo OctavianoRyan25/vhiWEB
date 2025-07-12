@@ -6,12 +6,20 @@ import (
 	"github.com/OctavianoRyan25/VhiWEB/res"
 	"github.com/OctavianoRyan25/VhiWEB/util"
 	"github.com/gin-gonic/gin"
+	"github.com/go-playground/validator/v10"
 )
 
 func CreateCatalog(c *gin.Context) {
 	var catalogReq model.CatalogRequest
 	if err := c.ShouldBindJSON(&catalogReq); err != nil {
 		res.NewResponse(c, 400, "Invalid input", "Please provide valid catalog details")
+		return
+	}
+
+	validate := validator.New()
+	if err := validate.Struct(&catalogReq); err != nil {
+		errors := util.ThrowError(err)
+		res.NewResponse(c, 400, "Validation error", errors)
 		return
 	}
 
@@ -61,6 +69,11 @@ func GetAllCatalogs(c *gin.Context) {
 
 func GetCatalogByID(c *gin.Context) {
 	catalogID := c.Param("id")
+	if catalogID == "" {
+		res.NewResponse(c, 400, "Invalid input", "ID is required")
+		return
+	}
+
 	var catalog model.Catalog
 
 	if err := config.DB.Preload("User").Preload("Vendor.User").First(&catalog, catalogID).Error; err != nil {
@@ -78,6 +91,13 @@ func UpdateCatalog(c *gin.Context) {
 
 	if err := c.ShouldBindJSON(&catalogReq); err != nil {
 		res.NewResponse(c, 400, "Invalid input", "Please provide valid catalog details")
+		return
+	}
+
+	validate := validator.New()
+	if err := validate.Struct(&catalogReq); err != nil {
+		errors := util.ThrowError(err)
+		res.NewResponse(c, 400, "Validation error", errors)
 		return
 	}
 
@@ -105,6 +125,11 @@ func UpdateCatalog(c *gin.Context) {
 
 func DeleteCatalog(c *gin.Context) {
 	catalogID := c.Param("id")
+	if catalogID == "" {
+		res.NewResponse(c, 400, "Invalid input", "ID is required")
+		return
+	}
+
 	var catalog model.Catalog
 
 	if err := config.DB.First(&catalog, catalogID).Error; err != nil {

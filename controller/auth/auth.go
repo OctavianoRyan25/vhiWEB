@@ -19,11 +19,7 @@ func Register(c *gin.Context) {
 
 	validate := validator.New()
 	if err := validate.Struct(&userReq); err != nil {
-		errors := []string{}
-		for _, error := range err.(validator.ValidationErrors) {
-			// Format the error message to be more user-friendly
-			errors = append(errors, error.Field()+" is "+error.Error())
-		}
+		errors := util.ThrowError(err)
 		res.NewResponse(c, 400, "Validation error", errors)
 		return
 	}
@@ -67,7 +63,8 @@ func Login(c *gin.Context) {
 
 	validate := validator.New()
 	if err := validate.Struct(&userReq); err != nil {
-		res.NewResponse(c, 400, "Validation error", err.Error())
+		errors := util.ThrowError(err)
+		res.NewResponse(c, 400, "Validation error", errors)
 		return
 	}
 

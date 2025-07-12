@@ -1,0 +1,1107 @@
+{
+	"info": {
+		"_postman_id": "874856eb-4d9a-45b9-8dd9-7428ec5db812",
+		"name": "E-ticketing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21864638"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"admin12@test.com\",\r\n    \"password\" : \"admin123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"admin12@test.com\",\r\n    \"password\" : \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Jul 2025 13:52:20 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "196"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"Login successful\",\n    \"data\": {\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMTJAdGVzdC5jb20iLCJ1c2VyX2lkIjo2fQ.ywS4Q3K8Ck0dg7PmsxGMypQbqChY4M0S7SEE11gcN2Q\"\n    }\n}"
+				},
+				{
+					"name": "Error Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"admin12@test.com\",\r\n    \"password\" : \"admin12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Jul 2025 13:52:36 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "72"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 401,\n    \"message\": \"Unauthorized\",\n    \"data\": \"Invalid email or password\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Test admin 1\",\r\n    \"email\" : \"admin@example.com\",\r\n    \"password\" : \"admin123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Test admin 1\",\r\n    \"email\" : \"admin@example.com\",\r\n    \"password\" : \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Jul 2025 13:51:10 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 201,\n    \"message\": \"Registration successful\"\n}"
+				},
+				{
+					"name": "Error Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Test admin 1\",\r\n    \"email\" : \"admin@example.com\",\r\n    \"password\" : \"admi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Jul 2025 13:51:32 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "83"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 400,\n    \"message\": \"Validation error\",\n    \"data\": {\n        \"password\": \"Minimum length is 6\"\n    }\n}"
+				},
+				{
+					"name": "Error Register Email Already Registered",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Test admin 1\",\r\n    \"email\" : \"admin@example.com\",\r\n    \"password\" : \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"register"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Jul 2025 13:51:49 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "67"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 409,\n    \"message\": \"Conflict\",\n    \"data\": \"Email already registered\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Vendor",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMTJAdGVzdC5jb20iLCJ1c2VyX2lkIjo2fQ.ywS4Q3K8Ck0dg7PmsxGMypQbqChY4M0S7SEE11gcN2Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Vendor 1\",\r\n    \"company\" : \"PT. ABC\",\r\n    \"email\" : \"abs@gmail.com\",\r\n    \"phone\" : \"081297412\",\r\n    \"address\" : \"Kudus\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/vendor/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"vendor",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Create Vendor",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Vendor 1\",\r\n    \"company\" : \"PT. ABC\",\r\n    \"email\" : \"abs@gmail.com\",\r\n    \"phone\" : \"081297412\",\r\n    \"address\" : \"Kudus\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/vendor/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"vendor",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Jul 2025 13:52:58 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "366"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 201,\n    \"message\": \"Vendor created successfully\",\n    \"data\": {\n        \"id\": 7,\n        \"name\": \"Vendor 1\",\n        \"company\": \"PT. ABC\",\n        \"email\": \"abs@gmail.com\",\n        \"phone\": \"081297412\",\n        \"address\": \"Kudus\",\n        \"user\": {\n            \"id\": 6,\n            \"name\": \"admin njir\",\n            \"email\": \"admin12@test.com\",\n            \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n            \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n        },\n        \"created_at\": \"2025-07-12T20:52:58.471+07:00\"\n    }\n}"
+				},
+				{
+					"name": "Error Create Vendor Field Required",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Vendor 1\",\r\n    \"company\" : \"PT. ABC\",\r\n    \"email\" : \"abs@gmail.com\",\r\n    \"phone\" : \"081297412\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/vendor/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"vendor",
+								"create"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Jul 2025 14:01:01 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 400,\n    \"message\": \"Validation error\",\n    \"data\": {\n        \"address\": \"This field is required\"\n    }\n}"
+				},
+				{
+					"name": "Error Create Vendor Unauthorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Vendor 1\",\r\n    \"company\" : \"PT. ABC\",\r\n    \"email\" : \"abs@gmail.com\",\r\n    \"phone\" : \"081297412\",\r\n    \"address\" : \"Kudus\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/vendor/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"vendor",
+								"create"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Jul 2025 14:01:36 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Unauthorized\",\n    \"message\": \"Need to provide a valid authorization\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create Catalog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMTJAdGVzdC5jb20iLCJ1c2VyX2lkIjo2fQ.ywS4Q3K8Ck0dg7PmsxGMypQbqChY4M0S7SEE11gcN2Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Catalog 1\",\r\n    \"description\" : \"Bla bla bla bla\",\r\n    \"vendor_id\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/catalog/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"catalog",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Create Catalog",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Catalog 1\",\r\n    \"description\" : \"Bla bla bla bla\",\r\n    \"vendor_id\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/catalog/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"catalog",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Jul 2025 14:02:15 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "653"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 201,\n    \"message\": \"Catalog created successfully\",\n    \"data\": {\n        \"id\": 14,\n        \"name\": \"Catalog 1\",\n        \"slug\": \"catalog-1\",\n        \"description\": \"Bla bla bla bla\",\n        \"user\": {\n            \"id\": 6,\n            \"name\": \"admin njir\",\n            \"email\": \"admin12@test.com\",\n            \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n            \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n        },\n        \"vendor\": {\n            \"id\": 1,\n            \"name\": \"Vendor 1\",\n            \"company\": \"PT. ABC\",\n            \"email\": \"abs@gmail.com\",\n            \"phone\": \"081297412\",\n            \"address\": \"Kudus\",\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"admin njir\",\n                \"email\": \"admin12@test.com\",\n                \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n            },\n            \"created_at\": \"2025-07-11T14:06:12.529+07:00\"\n        },\n        \"created_at\": \"2025-07-12T21:02:15.54+07:00\"\n    }\n}"
+				},
+				{
+					"name": "Error Create Catalog Field Required",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Catalog 1\",\r\n    \"description\" : \"Bla bla bla bla\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/catalog/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"catalog",
+								"create"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Jul 2025 14:02:41 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "86"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 400,\n    \"message\": \"Validation error\",\n    \"data\": {\n        \"vendorid\": \"This field is required\"\n    }\n}"
+				},
+				{
+					"name": "Error Create Catalog Unauthorized",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Catalog 1\",\r\n    \"description\" : \"Bla bla bla bla\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/catalog/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"catalog",
+								"create"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Jul 2025 14:03:02 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "74"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Unauthorized\",\n    \"message\": \"Need to provide a valid authorization\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Catalog",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMTJAdGVzdC5jb20iLCJ1c2VyX2lkIjo2fQ.ywS4Q3K8Ck0dg7PmsxGMypQbqChY4M0S7SEE11gcN2Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/catalog",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"catalog"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Get All Catalog",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Catalog 1\",\r\n    \"description\" : \"Bla bla bla bla\",\r\n    \"vendor_id\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/catalog",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"catalog"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Jul 2025 14:03:20 GMT"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"Catalogs retrieved successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Catalog 1 Update cuy\",\n            \"slug\": \"catalog-1-update-cuy\",\n            \"description\": \"Bla bla bla bla update\",\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"admin njir\",\n                \"email\": \"admin12@test.com\",\n                \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n            },\n            \"vendor\": {\n                \"id\": 1,\n                \"name\": \"Vendor 1\",\n                \"company\": \"PT. ABC\",\n                \"email\": \"abs@gmail.com\",\n                \"phone\": \"081297412\",\n                \"address\": \"Kudus\",\n                \"user\": {\n                    \"id\": 6,\n                    \"name\": \"admin njir\",\n                    \"email\": \"admin12@test.com\",\n                    \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                    \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n                },\n                \"created_at\": \"2025-07-11T14:06:12.529+07:00\"\n            },\n            \"created_at\": \"2025-07-11T14:27:37.343+07:00\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Catalog 1\",\n            \"slug\": \"catalog-1\",\n            \"description\": \"Bla bla bla bla\",\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"admin njir\",\n                \"email\": \"admin12@test.com\",\n                \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n            },\n            \"vendor\": {\n                \"id\": 1,\n                \"name\": \"Vendor 1\",\n                \"company\": \"PT. ABC\",\n                \"email\": \"abs@gmail.com\",\n                \"phone\": \"081297412\",\n                \"address\": \"Kudus\",\n                \"user\": {\n                    \"id\": 6,\n                    \"name\": \"admin njir\",\n                    \"email\": \"admin12@test.com\",\n                    \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                    \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n                },\n                \"created_at\": \"2025-07-11T14:06:12.529+07:00\"\n            },\n            \"created_at\": \"2025-07-11T14:28:30.232+07:00\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Catalog 1\",\n            \"slug\": \"catalog-1\",\n            \"description\": \"Bla bla bla bla\",\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"admin njir\",\n                \"email\": \"admin12@test.com\",\n                \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n            },\n            \"vendor\": {\n                \"id\": 1,\n                \"name\": \"Vendor 1\",\n                \"company\": \"PT. ABC\",\n                \"email\": \"abs@gmail.com\",\n                \"phone\": \"081297412\",\n                \"address\": \"Kudus\",\n                \"user\": {\n                    \"id\": 6,\n                    \"name\": \"admin njir\",\n                    \"email\": \"admin12@test.com\",\n                    \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                    \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n                },\n                \"created_at\": \"2025-07-11T14:06:12.529+07:00\"\n            },\n            \"created_at\": \"2025-07-11T14:33:58.312+07:00\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Catalog 1\",\n            \"slug\": \"catalog-1\",\n            \"description\": \"Bla bla bla bla\",\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"admin njir\",\n                \"email\": \"admin12@test.com\",\n                \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n            },\n            \"vendor\": {\n                \"id\": 1,\n                \"name\": \"Vendor 1\",\n                \"company\": \"PT. ABC\",\n                \"email\": \"abs@gmail.com\",\n                \"phone\": \"081297412\",\n                \"address\": \"Kudus\",\n                \"user\": {\n                    \"id\": 6,\n                    \"name\": \"admin njir\",\n                    \"email\": \"admin12@test.com\",\n                    \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                    \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n                },\n                \"created_at\": \"2025-07-11T14:06:12.529+07:00\"\n            },\n            \"created_at\": \"2025-07-11T14:35:14.068+07:00\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Catalog 1\",\n            \"slug\": \"catalog-1\",\n            \"description\": \"Bla bla bla bla\",\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"admin njir\",\n                \"email\": \"admin12@test.com\",\n                \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n            },\n            \"vendor\": {\n                \"id\": 1,\n                \"name\": \"Vendor 1\",\n                \"company\": \"PT. ABC\",\n                \"email\": \"abs@gmail.com\",\n                \"phone\": \"081297412\",\n                \"address\": \"Kudus\",\n                \"user\": {\n                    \"id\": 6,\n                    \"name\": \"admin njir\",\n                    \"email\": \"admin12@test.com\",\n                    \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                    \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n                },\n                \"created_at\": \"2025-07-11T14:06:12.529+07:00\"\n            },\n            \"created_at\": \"2025-07-11T14:37:22.339+07:00\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Catalog 1\",\n            \"slug\": \"catalog-1\",\n            \"description\": \"Bla bla bla bla\",\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"admin njir\",\n                \"email\": \"admin12@test.com\",\n                \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n            },\n            \"vendor\": {\n                \"id\": 1,\n                \"name\": \"Vendor 1\",\n                \"company\": \"PT. ABC\",\n                \"email\": \"abs@gmail.com\",\n                \"phone\": \"081297412\",\n                \"address\": \"Kudus\",\n                \"user\": {\n                    \"id\": 6,\n                    \"name\": \"admin njir\",\n                    \"email\": \"admin12@test.com\",\n                    \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                    \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n                },\n                \"created_at\": \"2025-07-11T14:06:12.529+07:00\"\n            },\n            \"created_at\": \"2025-07-11T14:46:09.21+07:00\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Catalog 1\",\n            \"slug\": \"catalog-1\",\n            \"description\": \"Bla bla bla bla\",\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"admin njir\",\n                \"email\": \"admin12@test.com\",\n                \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n            },\n            \"vendor\": {\n                \"id\": 1,\n                \"name\": \"Vendor 1\",\n                \"company\": \"PT. ABC\",\n                \"email\": \"abs@gmail.com\",\n                \"phone\": \"081297412\",\n                \"address\": \"Kudus\",\n                \"user\": {\n                    \"id\": 6,\n                    \"name\": \"admin njir\",\n                    \"email\": \"admin12@test.com\",\n                    \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                    \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n                },\n                \"created_at\": \"2025-07-11T14:06:12.529+07:00\"\n            },\n            \"created_at\": \"2025-07-11T14:47:52.339+07:00\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Catalog 1\",\n            \"slug\": \"catalog-1\",\n            \"description\": \"Bla bla bla bla\",\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"admin njir\",\n                \"email\": \"admin12@test.com\",\n                \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n            },\n            \"vendor\": {\n                \"id\": 1,\n                \"name\": \"Vendor 1\",\n                \"company\": \"PT. ABC\",\n                \"email\": \"abs@gmail.com\",\n                \"phone\": \"081297412\",\n                \"address\": \"Kudus\",\n                \"user\": {\n                    \"id\": 6,\n                    \"name\": \"admin njir\",\n                    \"email\": \"admin12@test.com\",\n                    \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                    \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n                },\n                \"created_at\": \"2025-07-11T14:06:12.529+07:00\"\n            },\n            \"created_at\": \"2025-07-11T14:53:23.396+07:00\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Catalog 1\",\n            \"slug\": \"catalog-1\",\n            \"description\": \"Bla bla bla bla\",\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"admin njir\",\n                \"email\": \"admin12@test.com\",\n                \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n            },\n            \"vendor\": {\n                \"id\": 1,\n                \"name\": \"Vendor 1\",\n                \"company\": \"PT. ABC\",\n                \"email\": \"abs@gmail.com\",\n                \"phone\": \"081297412\",\n                \"address\": \"Kudus\",\n                \"user\": {\n                    \"id\": 6,\n                    \"name\": \"admin njir\",\n                    \"email\": \"admin12@test.com\",\n                    \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                    \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n                },\n                \"created_at\": \"2025-07-11T14:06:12.529+07:00\"\n            },\n            \"created_at\": \"2025-07-11T14:53:58.937+07:00\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Catalog 1\",\n            \"slug\": \"catalog-1\",\n            \"description\": \"Bla bla bla bla\",\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"admin njir\",\n                \"email\": \"admin12@test.com\",\n                \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n            },\n            \"vendor\": {\n                \"id\": 1,\n                \"name\": \"Vendor 1\",\n                \"company\": \"PT. ABC\",\n                \"email\": \"abs@gmail.com\",\n                \"phone\": \"081297412\",\n                \"address\": \"Kudus\",\n                \"user\": {\n                    \"id\": 6,\n                    \"name\": \"admin njir\",\n                    \"email\": \"admin12@test.com\",\n                    \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                    \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n                },\n                \"created_at\": \"2025-07-11T14:06:12.529+07:00\"\n            },\n            \"created_at\": \"2025-07-11T14:58:08.728+07:00\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"Catalog 1\",\n            \"slug\": \"catalog-1\",\n            \"description\": \"Bla bla bla bla\",\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"admin njir\",\n                \"email\": \"admin12@test.com\",\n                \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n            },\n            \"vendor\": {\n                \"id\": 1,\n                \"name\": \"Vendor 1\",\n                \"company\": \"PT. ABC\",\n                \"email\": \"abs@gmail.com\",\n                \"phone\": \"081297412\",\n                \"address\": \"Kudus\",\n                \"user\": {\n                    \"id\": 6,\n                    \"name\": \"admin njir\",\n                    \"email\": \"admin12@test.com\",\n                    \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                    \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n                },\n                \"created_at\": \"2025-07-11T14:06:12.529+07:00\"\n            },\n            \"created_at\": \"2025-07-11T15:01:19.211+07:00\"\n        },\n        {\n            \"id\": 13,\n            \"name\": \"Catalog 1\",\n            \"slug\": \"catalog-1\",\n            \"description\": \"Bla bla bla bla\",\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"admin njir\",\n                \"email\": \"admin12@test.com\",\n                \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n            },\n            \"vendor\": {\n                \"id\": 1,\n                \"name\": \"Vendor 1\",\n                \"company\": \"PT. ABC\",\n                \"email\": \"abs@gmail.com\",\n                \"phone\": \"081297412\",\n                \"address\": \"Kudus\",\n                \"user\": {\n                    \"id\": 6,\n                    \"name\": \"admin njir\",\n                    \"email\": \"admin12@test.com\",\n                    \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                    \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n                },\n                \"created_at\": \"2025-07-11T14:06:12.529+07:00\"\n            },\n            \"created_at\": \"2025-07-11T15:06:23.167+07:00\"\n        },\n        {\n            \"id\": 14,\n            \"name\": \"Catalog 1\",\n            \"slug\": \"catalog-1\",\n            \"description\": \"Bla bla bla bla\",\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"admin njir\",\n                \"email\": \"admin12@test.com\",\n                \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n            },\n            \"vendor\": {\n                \"id\": 1,\n                \"name\": \"Vendor 1\",\n                \"company\": \"PT. ABC\",\n                \"email\": \"abs@gmail.com\",\n                \"phone\": \"081297412\",\n                \"address\": \"Kudus\",\n                \"user\": {\n                    \"id\": 6,\n                    \"name\": \"admin njir\",\n                    \"email\": \"admin12@test.com\",\n                    \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                    \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n                },\n                \"created_at\": \"2025-07-11T14:06:12.529+07:00\"\n            },\n            \"created_at\": \"2025-07-12T21:02:15.54+07:00\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Catalog By ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMTJAdGVzdC5jb20iLCJ1c2VyX2lkIjo2fQ.ywS4Q3K8Ck0dg7PmsxGMypQbqChY4M0S7SEE11gcN2Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/catalog/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"catalog",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Get Catalog By ID",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Catalog 1\",\r\n    \"description\" : \"Bla bla bla bla\",\r\n    \"vendor_id\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/catalog/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"catalog",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Jul 2025 14:04:02 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "655"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"Catalog retrieved successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Catalog 1\",\n        \"slug\": \"catalog-1\",\n        \"description\": \"Bla bla bla bla\",\n        \"user\": {\n            \"id\": 6,\n            \"name\": \"admin njir\",\n            \"email\": \"admin12@test.com\",\n            \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n            \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n        },\n        \"vendor\": {\n            \"id\": 1,\n            \"name\": \"Vendor 1\",\n            \"company\": \"PT. ABC\",\n            \"email\": \"abs@gmail.com\",\n            \"phone\": \"081297412\",\n            \"address\": \"Kudus\",\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"admin njir\",\n                \"email\": \"admin12@test.com\",\n                \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n            },\n            \"created_at\": \"2025-07-11T14:06:12.529+07:00\"\n        },\n        \"created_at\": \"2025-07-11T14:28:30.232+07:00\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Catalog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMTJAdGVzdC5jb20iLCJ1c2VyX2lkIjo2fQ.ywS4Q3K8Ck0dg7PmsxGMypQbqChY4M0S7SEE11gcN2Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Catalog 1 Update cuy\",\r\n    \"description\" : \"Bla bla bla bla update\",\r\n    \"vendor_id\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/catalog/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"catalog",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Update Catalog",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Catalog 1 Update cuy\",\r\n    \"description\" : \"Bla bla bla bla update\",\r\n    \"vendor_id\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/catalog/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"catalog",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Jul 2025 14:04:35 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "682"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"Catalog updated successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Catalog 1 Update cuy\",\n        \"slug\": \"catalog-1-update-cuy\",\n        \"description\": \"Bla bla bla bla update\",\n        \"user\": {\n            \"id\": 6,\n            \"name\": \"admin\",\n            \"email\": \"admin12@test.com\",\n            \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n            \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n        },\n        \"vendor\": {\n            \"id\": 1,\n            \"name\": \"Vendor 1\",\n            \"company\": \"PT. ABC\",\n            \"email\": \"abs@gmail.com\",\n            \"phone\": \"081297412\",\n            \"address\": \"Kudus\",\n            \"user\": {\n                \"id\": 6,\n                \"name\": \"admin\",\n                \"email\": \"admin12@test.com\",\n                \"created_at\": \"2025-07-10T15:45:50.059+07:00\",\n                \"updated_at\": \"2025-07-10T15:45:50.059+07:00\"\n            },\n            \"created_at\": \"2025-07-11T14:06:12.529+07:00\"\n        },\n        \"created_at\": \"2025-07-11T14:28:30.232+07:00\"\n    }\n}"
+				},
+				{
+					"name": "Error Update Catalog Field Required",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Catalog 1 Update cuy\",\r\n    \"description\" : \"Bla bla bla bla update\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/catalog/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"catalog",
+								"2"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Jul 2025 14:07:46 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "86"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 400,\n    \"message\": \"Validation error\",\n    \"data\": {\n        \"vendorid\": \"This field is required\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Catalog",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluMTJAdGVzdC5jb20iLCJ1c2VyX2lkIjo2fQ.ywS4Q3K8Ck0dg7PmsxGMypQbqChY4M0S7SEE11gcN2Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Catalog 1 Update cuy\",\r\n    \"description\" : \"Bla bla bla bla update\",\r\n    \"vendor_id\" : 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/catalog/12",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"catalog",
+						"12"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Delete Catalog",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"Catalog 1 Update cuy\",\r\n    \"description\" : \"Bla bla bla bla update\",\r\n    \"vendor_id\" : 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/catalog/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"catalog",
+								"10"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 12 Jul 2025 14:08:14 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "53"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": 200,\n    \"message\": \"Catalog deleted successfully\"\n}"
+				}
+			]
+		}
+	]
+}
